@@ -231,6 +231,10 @@ function initUI(layers,index,map) {
     if(layerInfo.length > 0){
 		if (map.id == "mapDiv0") {
 			$("#legend0").append("<img src='images/Tolerance Legend Small.jpg'></img>");
+		} else if (map.id == "mapDiv1") {
+			$("#legend1").append("<img src='images/Laws legend.jpg'></img>");
+		} else if (map.id == "mapDiv2") {
+			$("#legend2").append("<img src='images/Sentiment legend.jpg'></img>");
 		} else {
 			var legendDijit = new esri.dijit.Legend({
 				map:map,
