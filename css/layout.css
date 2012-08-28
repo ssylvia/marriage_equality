@@ -173,6 +173,10 @@ h1{
 	font-family:Arial, Helvetica, sans-serif;
 }
 
+#legend0 {
+	padding:0px;
+}
+
 .map{
 	position:absolute;
 	top:0;

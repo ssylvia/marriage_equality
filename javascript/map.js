@@ -137,6 +137,17 @@ function createMap(){
 			
 			dojo.connect(map,'onClick',stopTime);
 			dojo.connect(map,'onExtentChange',syncExtents)
+			dojo.connect(map,'onExtentChange',function(){
+				console.log(map.getLevel())
+				$("#legend0").empty();
+				if (map.getLevel() < 6) {
+					$("#legend0").append("<img src='images/Tolerance Legend Small.jpg'></img>");			
+				} else if (map.getLevel() < 10) {
+					$("#legend0").append("<img src='images/Tolerance Legend Medium.jpg'></img>");			
+				} else {
+					$("#legend0").append("<img src='images/Tolerance Legend Large.jpg'></img>");			
+				}
+			})
 			dojo.connect(map,"onUpdateEnd",function(){
 				mapLoaded();
 				playAnimation();
@@ -215,11 +226,15 @@ function initUI(layers,index,map) {
     var layerInfo = buildLayersList(layers);      
 
     if(layerInfo.length > 0){
-		var legendDijit = new esri.dijit.Legend({
-			map:map,
-			layerInfos:layerInfo
-		},"legend"+index);
-        legendDijit.startup();
+		if (map.id == "mapDiv0") {
+			$("#legend0").append("<img src='images/Tolerance Legend Small.jpg'></img>");
+		} else {
+			var legendDijit = new esri.dijit.Legend({
+				map:map,
+				layerInfos:layerInfo
+			},"legend"+index);
+			legendDijit.startup();
+		}
     }
     else{
         dojo.byId("legend"+index).innerHTML = "";
