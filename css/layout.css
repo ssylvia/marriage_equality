@@ -256,15 +256,18 @@ h1{
 	width:800px;
 	height:500px;
 	z-index:1000;
+	border-color:#FFF;
+	border-style:solid;
 }
 
 #introBanner{
 	width:100%;
 	padding:20px 25px 20px 25px;
-	background-color:#dadada;
-	color:#444;
+	background-color:#444444;
+	color:#FFF;
 	font-size:28px;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:Arial;
+	font-weight:bold;
 	white-space: nowrap;  
     overflow: hidden;
     text-overflow: ellipsis;
@@ -272,9 +275,11 @@ h1{
 }
 
 #introText{
-	width:45%;
+	color:#6b6b6b;
+	width:300px;
 	height:100%;
 	padding:25px 0 25px 25px;
+	overflow:hidden;
 }
 
 #introImgCon{
@@ -285,12 +290,12 @@ h1{
 
 #introImg{
 	display:none;
-	max-width:350px;
-	max-height:377px;
+	max-width:475px;
+	max-height:475px;
 }
 
 #continue{
-	margin-left:115px;
+	margin-left:75px;
 }
 
 g,v{
