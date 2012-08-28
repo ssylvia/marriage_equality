@@ -135,6 +135,9 @@ function createMap(){
 			var map = response.map
 			_maps[i] = map;
 			
+			var extent = new esri.geometry.Extent({"xmin":-14235013,"ymin":2075716,"xmax":-7151441,"ymax":7290556,"spatialReference":{"wkid":102100}});
+			setTimeout(function(){map.setExtent(extent)},2000);
+			
 			dojo.connect(map,'onClick',stopTime);
 			dojo.connect(map,'onExtentChange',syncExtents)
 			dojo.connect(map,'onExtentChange',function(){
