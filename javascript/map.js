@@ -139,10 +139,11 @@ function createMap(){
 			setTimeout(function(){map.setExtent(extent)},2000);
 			
 			dojo.connect(map,'onClick',stopTime);
-			dojo.connect(map,'onExtentChange',syncExtents)
+			dojo.connect(map,'onExtentChange',syncExtents);
 			dojo.connect(map,'onExtentChange',function(){
-				console.log(map.getLevel())
+				
 				$("#legend0").empty();
+				
 				if (map.getLevel() < 6) {
 					$("#legend0").append("<img src='images/Tolerance Legend Small.jpg'></img>");			
 				} else if (map.getLevel() < 10) {
@@ -150,7 +151,18 @@ function createMap(){
 				} else {
 					$("#legend0").append("<img src='images/Tolerance Legend Large.jpg'></img>");			
 				}
-			})
+				
+				if (map.id == "mapDiv0") {
+					// check allowable scale for dot map
+					if (map.getLevel() > 12) map.setLevel(12);
+				} else if (map.id == "mapDiv1") {
+					if (map.getLevel() > 7) map.setLevel(7);
+				} else if (map.id == "mapDiv2") {
+					if (map.getLevel() > 6) map.setLevel(6);
+				}
+				
+			});
+			
 			dojo.connect(map,"onUpdateEnd",function(){
 				mapLoaded();
 				playAnimation();
