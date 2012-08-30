@@ -1,4 +1,15 @@
 $(document).ready(function(e) {
+	intro();
+	$("#continue").click(function(e) {
+        $("#modalScreen").fadeOut();
+		$("#splashScreen").fadeOut();
+    });
+	$('#introTab').click(function(){
+		intro();
+	});	
+});
+
+function intro(){
     $("#modalScreen").fadeTo("fast","0.7");
 	$("#splashScreen").css("left",($(document).width()-800)/2);
 	$("#splashScreen").css("top",($(document).height()-500)/2);
@@ -12,11 +23,7 @@ $(document).ready(function(e) {
 		}
 		$("#introImg").show();
 	});
-	$("#continue").click(function(e) {
-        $("#modalScreen").fadeOut();
-		$("#splashScreen").fadeOut();
-    });
-});
+}
 
 function setupLayout(){
 	if(configOptions.webmaps.length > 1){
