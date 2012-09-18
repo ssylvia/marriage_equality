@@ -142,14 +142,20 @@ function createMap(){
 			dojo.connect(map,'onExtentChange',syncExtents);
 			dojo.connect(map,'onExtentChange',function(){
 				
+				console.log("level: ",map.getLevel());
+				
 				$("#legend0").empty();
 				
 				if (map.getLevel() < 6) {
-					$("#legend0").append("<img src='images/Tolerance Legend Small.jpg'></img>");			
-				} else if (map.getLevel() < 10) {
-					$("#legend0").append("<img src='images/Tolerance Legend Medium.jpg'></img>");			
+					$("#legend0").append("<img src='images/Counties.small.circles.jpg'></img>");	
+				/*		
+				} else if (map.getLevel() < 7) {
+					$("#legend0").append("<img src='images/Counties.medium.circles.jpg'></img>");			
+				*/
+				} else if (map.getLevel() < 8) {					
+					$("#legend0").append("<img src='images/Counties.large.circles.jpg'></img>");			
 				} else {
-					$("#legend0").append("<img src='images/Tolerance Legend Large.jpg'></img>");			
+					$("#legend0").append("<img src='images/Tracts.small.circles.jpg'></img>");			
 				}
 				
 				if (map.id == "mapDiv0") {
