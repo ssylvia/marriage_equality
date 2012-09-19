@@ -165,6 +165,7 @@ h1{
 #legendPanel{
 	position:relative;
 	overflow:auto;
+	overflow-x:hidden;
 }
 	  
 .legend {
