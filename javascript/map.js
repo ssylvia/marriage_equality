@@ -147,15 +147,15 @@ function createMap(){
 				$("#legend0").empty();
 				
 				if (map.getLevel() < 6) {
-					$("#legend0").append("<img src='images/Counties.small.circles.jpg'></img>");	
-				/*		
+					$("#legend0").append("<img src='images/Counties.small.circles.jpg'></img>");			
 				} else if (map.getLevel() < 7) {
-					$("#legend0").append("<img src='images/Counties.medium.circles.jpg'></img>");			
-				*/
+					$("#legend0").append("<img src='images/Counties.medium.circles.jpg'></img>");
 				} else if (map.getLevel() < 8) {					
 					$("#legend0").append("<img src='images/Counties.large.circles.jpg'></img>");			
-				} else {
+				} else if (map.getLevel() < 9) {
 					$("#legend0").append("<img src='images/Tracts.small.circles.jpg'></img>");			
+				} else {
+					$("#legend0").append("<img src='images/Tracts.medium.circles.jpg'></img>");			
 				}
 				
 				if (map.id == "mapDiv0") {
@@ -248,7 +248,7 @@ function initUI(layers,index,map) {
 
     if(layerInfo.length > 0){
 		if (map.id == "mapDiv0") {
-			$("#legend0").append("<img src='images/Tolerance Legend Small.jpg'></img>");
+			$("#legend0").append("<img src='images/Counties.small.circles.jpg'></img>");
 		} else if (map.id == "mapDiv1") {
 			$("#legend1").append("<img src='images/Laws legend.jpg'></img>");
 		} else if (map.id == "mapDiv2") {
