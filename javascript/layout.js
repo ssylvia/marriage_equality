@@ -11,18 +11,12 @@ $(document).ready(function(e) {
 
 function intro(){
     $("#modalScreen").fadeTo("fast","0.7");
-	$("#splashScreen").css("left",($(document).width()-800)/2);
-	$("#splashScreen").css("top",($(document).height()-500)/2);
+	var dimensions = getViewportDimensions();
+	var width = dimensions[0];
+	var height = dimensions[1];
+	$("#splashScreen").css("left",(width-800)/2);
+	$("#splashScreen").css("top",(height-500)/2);
 	$("#splashScreen").fadeIn("slow");
-	$("#introImg").load(function(e) {
-		if(($("#introImg").height()) == 377){
-			$("#introImg").css("margin-top","25px");
-		}
-		else{
-			$("#introImg").css("margin-top",((427-($("#introImg").height()))/2));
-		}
-		$("#introImg").show();
-	});
 }
 
 function setupLayout(){
