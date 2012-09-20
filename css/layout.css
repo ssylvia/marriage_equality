@@ -166,6 +166,7 @@ h1{
 	position:relative;
 	overflow:auto;
 	overflow-x:hidden;
+	padding-left:2px;
 }
 	  
 .legend {
