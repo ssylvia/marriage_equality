@@ -146,7 +146,7 @@ function createMap(){
 				slider: true,
 				nav: false,
 				wrapAround180:true,
-				lods: _lods.slice(3,(i == 0 ? 14 : 7))
+				lods: _lods.slice(3,(i == 0 ? 14 : 8))
 			},
 			ignorePopups:false,
 			bingMapsKey: configOptions.bingmapskey
