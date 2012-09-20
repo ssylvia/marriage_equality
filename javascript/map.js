@@ -168,16 +168,18 @@ function createMap(){
 				
 				$("#legend0").empty();
 				
-				if (map.getLevel() < 6) {
+				if (map.getLevel() < 3) {
 					$("#legend0").append("<img src='images/Counties.small.circles.jpg'></img>");			
-				} else if (map.getLevel() < 7) {
+				} else if (map.getLevel() < 4) {
 					$("#legend0").append("<img src='images/Counties.medium.circles.jpg'></img>");
-				} else if (map.getLevel() < 8) {					
+				} else if (map.getLevel() < 5) {					
 					$("#legend0").append("<img src='images/Counties.large.circles.jpg'></img>");			
-				} else if (map.getLevel() < 9) {
+				} else if (map.getLevel() < 6) {
 					$("#legend0").append("<img src='images/Tracts.small.circles.jpg'></img>");			
-				} else {
+				} else if (map.getLevel() < 9) {
 					$("#legend0").append("<img src='images/Tracts.medium.circles.jpg'></img>");			
+				} else {
+					$("#legend0").append("<img src='images/Tracts.large.circles.jpg'></img>");			
 				}
 				
 			});
